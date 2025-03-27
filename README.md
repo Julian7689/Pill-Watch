@@ -1,66 +1,157 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+🏥 Pill Watch - Sistema de Gestión de Medicamentos
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+📦 Instalación de Dependencias con Breeze
 
-## About Laravel
+🛠️ Prerrequisitos
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+PHP 8.1+
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Composer
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Node.js
 
-## Learning Laravel
+MySQL o PostgreSQL
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+🚀 Pasos de Instalación
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+1️⃣ Clonar Repositorio
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+git clone https://github.com/Julian7689/Pill-Watch.git
+cd Pill-Watch
 
-## Laravel Sponsors
+2️⃣ Instalar Dependencias de Composer
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+# Instalar dependencias principales
+composer install
 
-### Premium Partners
+# Instalar Breeze como dependencia de desarrollo
+composer require laravel/breeze --dev
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+3️⃣ Instalar Breeze y Configurar Frontend
 
-## Contributing
+# Ejecutar instalación de Breeze
+php artisan breeze:install
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# Seleccionar opciones:
+# - Frontend: Blade
+# - Estilos: Tailwind CSS
+# - escoje despues la opcion 0 
+4️⃣ Configurar Entorno
 
-## Code of Conduct
+# Copiar archivo de configuración
+cp .env.example .env
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Generar clave de aplicación
+php artisan key:generate
 
-## Security Vulnerabilities
+✏️ Configurar base de datos en .env
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Editar las credenciales de:
 
-## License
+DB_CONNECTION
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+DB_HOST
+
+DB_PORT
+
+DB_DATABASE
+
+DB_USERNAME
+
+DB_PASSWORD
+
+📂 Migraciones Disponibles
+
+Archivo de Migración
+
+Descripción
+
+0001_01_01_000000_create_users_table.php
+
+Tabla de usuarios
+
+0001_01_01_000001_create_cache_table.php
+
+Tabla de caché
+
+0001_01_01_000002_create_jobs_table.php
+
+Tabla de trabajos en segundo plano
+
+2025_03_16_171838_create_medicamentos_table.php
+
+Tabla de medicamentos
+
+2025_03_16_171843_create_notificaciones_table.php
+
+Tabla de notificaciones
+
+2025_03_16_171847_create_dosis_table.php
+
+Tabla de dosis de medicamentos
+
+2025_03_16_171854_create_historial_table.php
+
+Tabla de historial médico
+
+2025_03_16_171858_create_horarios_table.php
+
+Tabla de horarios de medicación
+
+5️⃣ Configurar Base de Datos
+
+# Ejecutar migraciones
+php artisan migrate
+
+# (Opcional) Sembrar datos iniciales
+php artisan db:seed
+
+6️⃣ Instalar Dependencias de Frontend
+
+# Instalar dependencias de Node
+npm install
+
+# Compilar assets
+npm run dev
+
+7️⃣ Iniciar Servidor Local
+
+# Iniciar servidor de desarrollo
+php artisan serve
+
+⚡ Comandos Rápidos
+
+Comando
+
+Descripción
+
+php artisan migrate
+
+Actualizar esquema de base de datos
+
+php artisan migrate:status
+
+Ver estado de migraciones
+
+php artisan migrate:fresh
+
+Reiniciar todas las migraciones
+
+php artisan make:migration
+
+Crear nueva migración
+
+🔍 Detalles de Migraciones
+
+Las migraciones definen la estructura de la base de datos.
+
+Cada migración crea o modifica tablas específicas.
+
+Útil para control de versiones del esquema de base de datos.
+
+📋 Notas Importantes
+
+✅ Revisa cada migración antes de ejecutarla.⚠️ Usa migrate:fresh con precaución en producción.🔄 Mantén un respaldo de la base de datos antes de grandes cambios.
+
+🚀 ¡Listo! Ahora puedes comenzar a usar Pill Watch. 🎉
+
