@@ -11,11 +11,13 @@ class DosisController extends Controller
 {
     public function index(): JsonResponse
     {
-        $dosis = Dosis::whereHas('medicamento', function ($query) {
+        $dosis = Dosis::with('medicamento') // Cargar la relación
+        ->whereHas('medicamento', function ($query) {
             $query->where('user_id', Auth::id());
-        })->get();
+        })
+        ->get();
 
-        return response()->json($dosis);
+    return response()->json($dosis);
     }
 
     public function store(Request $request): JsonResponse

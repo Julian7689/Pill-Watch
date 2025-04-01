@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Dosis extends Model
 {
     use HasFactory;
+    protected $table = 'dosis';
     protected $fillable = [
         'medicamento_id',
         'cantidad',

@@ -20,4 +20,8 @@ class Medicamento extends Model
     {
         return $this->hasMany(Dosis::class,'medicamento_id','id');
     }
+    public function horarios()
+{
+    return $this->hasMany(Horario::class, 'medicamento_id', 'id');
+}
 }
